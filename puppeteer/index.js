@@ -6,9 +6,8 @@ const fs = require('fs');
   const page = await browser.newPage()
 
   // Place your Puppeteer script here
-
-
-
+  const response = await page.goto('https://bringyourownideas.com/images/byoi-logo.jpg');
+  fs.writeFileSync('./byoi-logo.jpg', await response.buffer());
 
 
   await browser.close()
